@@ -193,6 +193,18 @@ public static String displayLongestMessage() {
         }
         return longest;
     }
+    public static void loadStoredMessages() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("messages.json"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                JSONObject obj = new JSONObject(line);
+                String text = obj.getString("messageText");
+                storedMessages.add(text);
+            }
+        } catch (IOException e) {
+            // No file yet - continue without crashing
+        }
+    }
 
  public static String searchByRecipient(String recipient) {
         StringBuilder results = new StringBuilder();
@@ -219,6 +231,18 @@ public static String displayLongestMessage() {
             }
         }
         return "Hash not found.";
+    }
+ public static String printMessages() {
+        StringBuilder report = new StringBuilder();
+        report.append("==== Message Report ====\n");
+        for (int i = 0; i < sentMessages.size(); i++) {
+            report.append("-----------------------------\n");
+            report.append("Hash      : ").append(i < messageHashes.size() ? messageHashes.get(i) : "N/A").append("\n");
+            report.append("Recipient : ").append(i < recipientList.size() ? recipientList.get(i) : "N/A").append("\n");
+            report.append("Message   : ").append(sentMessages.get(i)).append("\n");
+        }
+        report.append("-----------------------------");
+        return report.toString();
     }
  public static String searchByMessageID(String id) {
         for (int i = 0; i < messageIDs.size(); i++) {
