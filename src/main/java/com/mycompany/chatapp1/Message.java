@@ -8,6 +8,8 @@ package com.mycompany.chatapp1;
 import java.util.Random;
 import org.json.JSONObject;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a single QuickChat message.
@@ -25,9 +27,14 @@ public class Message {
     private String recipient;
     private String messageText;
     private String messageHash;
-
+    
+    private static List<String> sentMessages        = new ArrayList<>();
+    private static List<String> disregardedMessages = new ArrayList<>();
+    private static List<String> storedMessages      = new ArrayList<>();
+    private static List<String> messageHashes       = new ArrayList<>();
+    private static List<String> messageIDs          = new ArrayList<>();
+    private static List<String> recipientList       = new ArrayList<>();
     // ---------- Constructors ----------
-
     /**
      * Creates a new Message and assigns it the next message number.
      */
