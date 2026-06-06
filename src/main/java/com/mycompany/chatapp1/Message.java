@@ -184,6 +184,27 @@ public class Message {
         String[] words = messageText.trim().split("\\s+");
         return words[words.length - 1].toUpperCase();
     }
+public static String displayLongestMessage() {
+        String longest = "";
+        for (String msg : storedMessages) {
+            if (msg.length() > longest.length()) {
+                longest = msg;
+            }
+        }
+        return longest;
+    }
+
+ public static String searchByMessageID(String id) {
+        for (int i = 0; i < messageIDs.size(); i++) {
+            if (messageIDs.get(i).equals(id)) {
+                if (i < sentMessages.size()) {
+                    return sentMessages.get(i);
+                }
+            }
+        }
+        return "Message not found.";
+    }
+ 
 
     // ---------- Getters and Setters ----------
 
