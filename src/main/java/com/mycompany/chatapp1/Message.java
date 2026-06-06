@@ -194,6 +194,32 @@ public static String displayLongestMessage() {
         return longest;
     }
 
+ public static String searchByRecipient(String recipient) {
+        StringBuilder results = new StringBuilder();
+        for (int i = 0; i < recipientList.size(); i++) {
+            if (recipientList.get(i).equals(recipient)) {
+                results.append(sentMessages.get(i)).append("\n");
+            }
+        }
+        if (results.length() == 0) return "No messages found for recipient.";
+        return results.toString().trim();
+    }
+ public static String deleteByHash(String hash) {
+        for (int i = 0; i < messageHashes.size(); i++) {
+            if (messageHashes.get(i).equals(hash)) {
+                String deletedText = "";
+                if (i < sentMessages.size()) {
+                    deletedText = sentMessages.get(i);
+                    sentMessages.remove(i);
+                    if (i < recipientList.size()) recipientList.remove(i);
+                }
+                messageHashes.remove(i);
+                messageIDs.remove(i);
+                return "Message: " + deletedText + " successfully deleted.";
+            }
+        }
+        return "Hash not found.";
+    }
  public static String searchByMessageID(String id) {
         for (int i = 0; i < messageIDs.size(); i++) {
             if (messageIDs.get(i).equals(id)) {
