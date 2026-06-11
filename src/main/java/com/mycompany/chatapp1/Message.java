@@ -21,6 +21,10 @@ public class Message {
     private static int messageCounter = 0;
     private static int totalMessagesSent = 0;
 
+    public static Object getStoredMessages() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     // ---------- Instance fields ----------
     private int messageNumber;
     private String messageID;
