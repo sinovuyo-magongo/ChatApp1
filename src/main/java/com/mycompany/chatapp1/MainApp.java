@@ -3,14 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
+package com.mycompany.chatapp1;
 
 import com.mycompany.chatapp1.Message;
-import java.util.Scanner;
-
-/**
- * Main entry point for the QuickChat application.
- * Handles registration, login, and the message sending menu.
- */
 import java.util.Scanner;
 
 /**

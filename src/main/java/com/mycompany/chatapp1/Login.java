@@ -2,9 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-/**
- * Handles user registration and login for QuickChat.
- */
+package com.mycompany.chatapp1;
+
 public class Login {
 
     private String username;

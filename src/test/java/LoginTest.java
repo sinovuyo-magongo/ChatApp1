@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
 
+package com.mycompany.chatapp1;
+import cn.org.faster.framework.auth.annotation.Login;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +29,7 @@ public class LoginTest {
     @Test
     public void testValidUsername() {
         // Valid: contains underscore and is 5 chars or less
-        assertTrue(login.checkUserName("si_no"));
+        assertTrue(login.checkUserName("Sinovuyo"));
     }
 
     @Test
